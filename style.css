@@ -108,11 +108,12 @@ nav a:hover {
 }
 
 .hero p {
-    animation-delay: 0.3s;
+    margin-top: 28px;
+    max-width: 700px;
 }
 
 .hero .btn {
-    animation-delay: 0.6s;
+    margin-top: 60px;
 }
 
 .btn {
