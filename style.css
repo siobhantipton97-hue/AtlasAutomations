@@ -418,7 +418,7 @@ body > p:last-of-type {
 /* ===== Process Section ===== */
 
 .process {
-  position: relative;
+  padding: 120px 20px 100px 20px;
 }
 
 .process::before {
