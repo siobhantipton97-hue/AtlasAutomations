@@ -71,9 +71,13 @@ nav a:hover {
 
 .hero {
     position: relative;
-    padding: 160px 20px;
+    min-height: 100vh;       /* full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    padding: 40px 20px;
 }
-
 .hero::before {
     content: "";
     position: absolute;
@@ -134,6 +138,7 @@ nav a:hover {
 .grid {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 40px;
     flex-wrap: wrap;
 }
@@ -182,4 +187,10 @@ footer {
 
 body::before {
     animation: reactorPulse 6s ease-in-out infinite;
+}
+header,
+.hero,
+.section,
+footer {
+    text-align: center;
 }
