@@ -110,11 +110,10 @@ nav a:hover {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
-    padding: 40px 20px;
+    padding: 18vh 20px 0;
 }
-
 .hero::before {
     content: "";
     position: absolute;
