@@ -9,9 +9,9 @@ body {
     margin: 0;
     color: #e2e8f0;
     background: radial-gradient(
-    circle at 50% 15%,
-    #1e3a8a 0%,
-    #0a0f2c 45%,
+    circle at 50% 10%,
+    #00eaff 0%,
+    #001f3f 40%,
     #000000 100%
 );
     overflow-x: hidden;
