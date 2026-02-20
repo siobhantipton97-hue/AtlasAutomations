@@ -1,6 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +10,15 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0;
     color: #e2e8f0;
     background: #00040a;
     overflow-x: hidden;
     position: relative;
 }
+
+/* =========================
+   BACKGROUND EFFECTS
+========================= */
 
 /* Massive glow reactor */
 body::before {
@@ -29,22 +33,42 @@ body::before {
     filter: blur(180px);
     opacity: 0.9;
     z-index: 0;
+    animation: reactorPulse 6s ease-in-out infinite;
 }
 
 /* Subtle tech grid */
 body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    z-index: 0;
     animation: gridDrift 20s linear infinite;
 }
 
 @keyframes gridDrift {
-    from {
-        background-position: 0 0;
+    from { background-position: 0 0; }
+    to { background-position: 80px 80px; }
+}
+
+@keyframes reactorPulse {
+    0%, 100% {
+        opacity: 0.85;
+        transform: translateX(-50%) scale(1);
     }
-    to {
-        background-position: 80px 80px;
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.08);
     }
 }
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     display: flex;
@@ -55,6 +79,9 @@ header {
     backdrop-filter: blur(25px);
     border-bottom: 1px solid rgba(0, 245, 255, 0.4);
     box-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
 header img {
@@ -66,56 +93,85 @@ nav a {
     font-weight: 600;
     text-shadow: 0 0 4px rgba(0,0,0,0.7);
 }
+
 nav a:hover {
     color: #00f5ff;
     text-shadow: 0 0 8px rgba(0,245,255,0.6);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     position: relative;
-    min-height: 100vh;       /* full screen height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertical center */
-    align-items: center;     /* horizontal center */
+    justify-content: center;
+    align-items: center;
     padding: 40px 20px;
+    overflow: hidden;
+    z-index: 2;
+    text-align: center;
 }
+
+/* Hero subtle radial overlay */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 245, 255, 0.12) 0%,
+        rgba(0, 10, 25, 0.6) 60%,
+        transparent 80%
+    );
     z-index: -1;
+}
+
+.hero-content {
+    padding: 60px 80px;
+    border-radius: 20px;
+    background: rgba(0, 20, 40, 0.35);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    box-shadow:
+        0 0 60px rgba(0, 245, 255, 0.15),
+        inset 0 0 40px rgba(0, 245, 255, 0.05);
 }
 
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 4rem;
+    line-height: 1.1;
     background: linear-gradient(90deg, #ffffff, #00f5ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow:
         0 0 12px rgba(0,245,255,0.6),
         0 0 25px rgba(0,245,255,0.4);
-}
-.hero p,
-.hero .btn {
-    opacity: 0;
-    transform: translateY(40px);
     animation: fadeUp 1s ease-out forwards;
 }
 
 .hero p {
     margin-top: 28px;
     max-width: 700px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease-out 0.3s forwards;
 }
 
 .hero .btn {
     margin-top: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease-out 0.6s forwards;
 }
+
+/* =========================
+   BUTTON
+========================= */
 
 .btn {
     position: relative;
@@ -142,13 +198,17 @@ nav a:hover {
 .btn:hover::before {
     left: 100%;
 }
-/* SECTIONS */
+
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
     position: relative;
-    z-index: 1;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    z-index: 2;
     padding: 120px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
 }
 
 .section h2 {
@@ -173,8 +233,6 @@ nav a:hover {
     backdrop-filter: blur(30px);
     border: 1px solid rgba(0, 245, 255, 0.4);
     box-shadow: 0 0 20px rgba(0, 245, 255, 0.15);
-
-    /* animation base state */
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -184,6 +242,7 @@ nav a:hover {
     opacity: 1;
     transform: translateY(0);
 }
+
 .card:hover {
     transform: translateY(-12px);
     box-shadow: 0 0 50px rgba(0, 245, 255, 0.6);
@@ -193,61 +252,10 @@ nav a:hover {
     background: rgba(124, 58, 237, 0.05);
 }
 
-footer {
-    padding: 40px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #64748b;
-}
+/* =========================
+   BOOKING SECTION
+========================= */
 
-/* Ensure content stays above glow + grid */
-header,
-.hero,
-.section,
-footer {
-    position: relative;
-    z-index: 2;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-body::before {
-    animation: reactorPulse 6s ease-in-out infinite;
-}
-header,
-.hero,
-.section,
-footer {
-    text-align: center;
-}
-@keyframes reactorPulse {
-    0%, 100% {
-        opacity: 0.85;
-        transform: translateX(-50%) scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.08);
-    }
-    }
-.hero h1 {
-    animation: fadeUp 1s ease-out forwards;
-}
-.hero p {
-    margin-top: 20px;
-}
-
-.hero .btn {
-    margin-top: 50px;
-}
 .booking {
     text-align: center;
     background: #0b0f14;
@@ -268,13 +276,31 @@ footer {
 .booking .btn {
     margin-top: 30px;
 }
-.hero-content {
-    padding: 60px 80px;
-    border-radius: 20px;
-    background: rgba(0, 20, 40, 0.35);
-    backdrop-filter: blur(40px);
-    border: 1px solid rgba(0, 245, 255, 0.3);
-    box-shadow:
-        0 0 60px rgba(0, 245, 255, 0.15),
-        inset 0 0 40px rgba(0, 245, 255, 0.05);
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
