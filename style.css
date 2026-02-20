@@ -399,3 +399,10 @@ body {
 .grid-overlay {
     animation: gridMove 16s ease-in-out infinite alternate;
 }
+/* Footer text visibility fix */
+
+body > p:last-of-type {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 255, 255, 0.85);
+}
