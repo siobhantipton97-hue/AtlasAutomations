@@ -360,3 +360,12 @@ footer {
     font-weight: 600;
     letter-spacing: 1px;
 }
+.mid-cta {
+    text-align: center;
+}
+
+.mid-cta p {
+    max-width: 600px;
+    margin: 20px auto 50px;
+    opacity: 0.85;
+}
