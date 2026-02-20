@@ -61,5 +61,19 @@
     <p>© 2026 Atlas Automation. Engineered for Scale.</p>
 </footer>
 
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".card").forEach(card => {
+    observer.observe(card);
+});
+</script>
+
 </body>
 </html>
