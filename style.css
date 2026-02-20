@@ -418,23 +418,38 @@ body > p:last-of-type {
 /* ===== Process Section ===== */
 
 .process {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-    z-index: 2;
+  position: relative;
+}
+
+.process::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.6),
+    transparent
+  );
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
 }
 
 .process h2 {
-    font-size: 2rem;
-    margin-bottom: 60px;
+  text-shadow:
+    0 0 10px rgba(0, 255, 255, 0.6),
+    0 0 25px rgba(0, 255, 255, 0.4);
+}
+.process-steps div {
+  transition: all 0.3s ease;
 }
 
-.process-steps {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+.process-steps div:hover {
+  transform: translateY(-6px);
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
 }
 
 .step {
