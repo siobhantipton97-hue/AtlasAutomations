@@ -103,35 +103,31 @@ nav a:hover {
    HERO
 ========================= */
 
+/* HERO */
+
 .hero {
     position: relative;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
-    overflow: hidden;
-    z-index: 2;
     text-align: center;
+    padding: 40px 20px;
 }
 
-/* Hero subtle radial overlay */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-        circle at center,
-        rgba(0, 245, 255, 0.12) 0%,
-        rgba(0, 10, 25, 0.6) 60%,
-        transparent 80%
-    );
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
     z-index: -1;
 }
 
 .hero-content {
-    padding: 60px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 60px;
     border-radius: 20px;
     background: rgba(0, 20, 40, 0.35);
     backdrop-filter: blur(40px);
@@ -140,7 +136,6 @@ nav a:hover {
         0 0 60px rgba(0, 245, 255, 0.15),
         inset 0 0 40px rgba(0, 245, 255, 0.05);
 }
-
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 4rem;
@@ -162,11 +157,8 @@ nav a:hover {
     animation: fadeUp 1s ease-out 0.3s forwards;
 }
 
-.hero .btn {
-    margin-top: 60px;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeUp 1s ease-out 0.6s forwards;
+hero .btn {
+    margin-top: 80px;
 }
 
 /* =========================
