@@ -190,14 +190,22 @@ nav a:hover {
 ========================= */
 
 .btn {
-    position: relative;
-    padding: 14px 32px;
-    background: linear-gradient(90deg, #00f5ff, #0077ff);
-    border-radius: 8px;
-    color: white;
-    font-weight: 600;
-    overflow: hidden;
-    transition: 0.3s ease;
+  display: inline-block;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 6px;
+  background: linear-gradient(90deg, #00f5ff, #00c3ff);
+  color: #000;
+
+  line-height: 1.2;
+  white-space: normal;
+  word-break: keep-all;
+
+  transition: all 0.3s ease;
 }
 
 .btn::before {
@@ -479,4 +487,14 @@ body > p:last-of-type {
 .step p {
     opacity: 0.75;
     font-size: 0.95rem;
+}
+@media (max-width: 600px) {
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+
 }
