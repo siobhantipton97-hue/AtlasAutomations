@@ -397,5 +397,6 @@ body {
 }
 
 .grid-overlay {
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 6s linear infinite;
+}
 }
