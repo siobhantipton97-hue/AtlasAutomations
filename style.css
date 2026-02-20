@@ -112,7 +112,7 @@ nav a:hover {
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    padding-top: 25vh; 20px 0;
+    padding: 25vh 20px 0;
 }
 .hero::before {
     content: "";
@@ -162,8 +162,22 @@ nav a:hover {
     animation: fadeUp 1s ease-out 0.3s forwards;
 }
 
-.hero .btn {
-   margin-top: 160px;
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 60px;
+    border-radius: 20px;
+    background: rgba(0, 20, 40, 0.35);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    box-shadow:
+        0 0 60px rgba(0, 245, 255, 0.15),
+        inset 0 0 40px rgba(0, 245, 255, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;   /* THIS controls spacing cleanly */
 }
 
 /* =========================
