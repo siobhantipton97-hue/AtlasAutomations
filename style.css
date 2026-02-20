@@ -58,14 +58,13 @@ header img {
 }
 
 nav a {
-    margin-left: 25px;
-    text-decoration: none;
-    color: #cbd5e1;
-    transition: 0.3s;
+    color: #e0eefd;
+    font-weight: 600;
+    text-shadow: 0 0 4px rgba(0,0,0,0.7);
 }
-
 nav a:hover {
     color: #00f5ff;
+    text-shadow: 0 0 8px rgba(0,245,255,0.6);
 }
 
 /* HERO */
@@ -79,9 +78,9 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
     z-index: -1;
-    border-radius: 20px;
 }
 
 .hero h1 {
@@ -95,12 +94,12 @@ nav a:hover {
         0 0 25px rgba(0,245,255,0.4);
 }
 .hero p {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto 40px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    line-height: 1.9;
     color: #dbeafe;
-    line-height: 1.8;
-    text-shadow: 0 0 8px rgba(0,0,0,0.8);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .btn {
@@ -120,8 +119,10 @@ nav a:hover {
 /* SECTIONS */
 
 .section {
-    padding: 100px 20px;
-    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    padding: 120px 20px;
 }
 
 .section h2 {
@@ -163,6 +164,16 @@ footer {
     font-size: 0.9rem;
     color: #64748b;
 }
+
+/* Ensure content stays above glow + grid */
+header,
+.hero,
+.section,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
 @keyframes reactorPulse {
     0% { opacity: 0.8; }
     50% { opacity: 1; }
