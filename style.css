@@ -135,6 +135,12 @@ nav a:hover {
     box-shadow:
         0 0 60px rgba(0, 245, 255, 0.15),
         inset 0 0 40px rgba(0, 245, 255, 0.05);
+
+    /* ADD THESE */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
@@ -157,8 +163,8 @@ nav a:hover {
     animation: fadeUp 1s ease-out 0.3s forwards;
 }
 
-hero .btn {
-    margin-top: 80px;
+.hero .btn {
+    margin-top: 100px;
 }
 
 /* =========================
