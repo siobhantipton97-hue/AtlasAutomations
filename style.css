@@ -443,15 +443,29 @@ body > p:last-of-type {
     0 0 10px rgba(0, 255, 255, 0.6),
     0 0 25px rgba(0, 255, 255, 0.4);
 }
-.process-steps div {
-  transition: all 0.3s ease;
+.process-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;   /* space between each step */
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+.process-steps > div {
+  max-width: 320px;
 }
 
 .process-steps div:hover {
   transform: translateY(-6px);
   text-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
 }
+.process-steps h3 {
+  margin-bottom: 20px;
+}
 
+.process-steps p {
+  line-height: 1.6;
+}
 .step {
     max-width: 280px;
 }
