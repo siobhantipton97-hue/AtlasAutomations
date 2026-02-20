@@ -183,11 +183,10 @@ footer {
 }
 
 @keyframes reactorPulse {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.8; }
+    0% { opacity: 0.75; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+    100% { opacity: 0.75; transform: translateX(-50%) scale(1); }
 }
-
 body::before {
     animation: reactorPulse 6s ease-in-out infinite;
 }
@@ -197,15 +196,10 @@ header,
 footer {
     text-align: center;
 }
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes reactorPulse {
+    0% { opacity: 0.75; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+    100% { opacity: 0.75; transform: translateX(-50%) scale(1); }
 }
 
 .hero h1 {
