@@ -10,7 +10,10 @@ body {
     color: #e2e8f0;
     background: radial-gradient(circle at 50% 20%, #0f2a5a 0%, #050816 60%, #02040a 100%);
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -21,8 +24,9 @@ body::before {
     height: 1100px;
     background: radial-gradient(circle, rgba(0, 220, 255, 0.45), transparent 60%);
     filter: blur(150px);
-    z-index: -1;
+    z-index: 0;
 }
+
 body::after {
     content: "";
     position: fixed;
@@ -30,8 +34,8 @@ body::after {
     height: 100%;
     background-image: radial-gradient(white 1px, transparent 1px);
     background-size: 3px 3px;
-    opacity: 0.05;
-    z-index: -1;
+    opacity: 0.15;
+    z-index: 0;
 }
 /* HEADER */
 
