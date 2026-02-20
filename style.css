@@ -279,14 +279,28 @@ nav a:hover {
 
 .testimonial p {
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 .testimonial span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.7;
+    display: block;
+}
+.testimonial {
+    position: relative;
 }
 
+.testimonial::before {
+    content: "“";
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 3rem;
+    color: rgba(0, 245, 255, 0.2);
+}
 /* =========================
    BOOKING SECTION
 ========================= */
