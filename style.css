@@ -392,11 +392,10 @@ body {
         background-position: 0 0, 0 0;
     }
     to {
-        background-position: 40px 40px, 40px 40px;
+        background-position: 30px 30px, 30px 30px;
     }
 }
 
 .grid-overlay {
-   animation: gridMove 14s ease-in-out infinite alternate;
-}
+    animation: gridMove 16s ease-in-out infinite alternate;
 }
