@@ -112,7 +112,7 @@ nav a:hover {
     justify-content: center;
     align-items: flex-start;
     text-align: center;
-    padding: 18vh 20px 0;
+    padding: 25vh 20px 0;
 }
 .hero::before {
     content: "";
