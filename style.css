@@ -548,3 +548,28 @@ body > p:last-of-type {
   margin: 0 auto 60px;
   opacity: 0.75;
 }
+/* WHY AUTOMATION SECTION */
+.why-automation {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.why-automation h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.automation-points {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.automation-points li {
+  padding: 12px 0;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
