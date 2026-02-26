@@ -755,3 +755,23 @@ letter-spacing: 0.5px;
 .goog-te-banner-frame {
   display: none !important;
 }
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.language-switcher button {
+  background: transparent;
+  border: 1px solid #555;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.language-switcher button:hover {
+  background: #ffffff20;
+}
