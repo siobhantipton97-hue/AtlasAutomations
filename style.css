@@ -783,3 +783,8 @@ letter-spacing: 0.5px;
 body {
   top: 0px !important;
 }
+.language-switcher button.active {
+  background: #00cfff;
+  color: #000;
+  border-color: #00cfff;
+}
