@@ -36,10 +36,11 @@
   <a href="#contact">Contact</a>
 
   <div class="language-switcher">
-  <button onclick="changeLanguage('en')">English</button>
-  <button onclick="changeLanguage('th')">ไทย</button>
-  <button onclick="changeLanguage('zh-CN')">中文</button>
-  <button onclick="changeLanguage('my')">မြန်မာ</button>
+  <div class="language-switcher">
+  <button onclick="setLanguage(this, 'en')">English</button>
+  <button onclick="setLanguage(this, 'th')">ไทย</button>
+  <button onclick="setLanguage(this, 'zh-CN')">中文</button>
+  <button onclick="setLanguage(this, 'my')">မြန်မာ</button>
 </div>
 
 <div id="google_translate_element" style="display:none;"></div>
@@ -276,7 +277,12 @@ function googleTranslateElementInit() {
 
 <!-- Language Switcher -->
 <script>
-function changeLanguage(lang) {
+function setLanguage(button, lang) {
+  document.querySelectorAll(".language-switcher button")
+    .forEach(btn => btn.classList.remove("active"));
+
+  button.classList.add("active");
+
   const interval = setInterval(function() {
     const select = document.querySelector(".goog-te-combo");
     if (select) {
