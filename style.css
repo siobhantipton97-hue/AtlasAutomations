@@ -649,3 +649,29 @@ letter-spacing: 0.5px;
   font-size: 0.9rem;
   cursor: pointer;
 }
+/* Force readable text on darker sections */
+
+.process,
+.why-automation,
+.client-info,
+.testimonials,
+.booking,
+.dark {
+  color: #ffffff;
+}
+
+.process p,
+.why-automation p,
+.client-info p,
+.testimonials p,
+.booking p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.process h2,
+.why-automation h2,
+.client-info h2,
+.testimonials h2,
+.booking h2 {
+  color: #ffffff;
+}
