@@ -270,13 +270,15 @@ function googleTranslateElementInit() {
 }
   <script>
 function changeLanguage(lang) {
-  const select = document.querySelector(".goog-te-combo");
-  if (!select) return;
-
-  select.value = lang;
-  select.dispatchEvent(new Event("change"));
+  const interval = setInterval(function() {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+      clearInterval(interval);
+    }
+  }, 300);
 }
-</script>
 </script>
 
 <script type="text/javascript"
