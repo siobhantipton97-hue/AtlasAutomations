@@ -36,19 +36,22 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="language-switcher">
-    <select id="languageSelect">
-      <option value="en">English</option>
-      <option value="th">ไทย</option>
-      <option value="zh">中文</option>
-    </select>
-  </div>
+  <select id="languageSwitcher">
+  <option value="en">English</option>
+  <option value="th">ไทย</option>
+  <option value="zh">中文</option>
+  <option value="mm">မြန်မာ</option>
+</select>
 </header>
 
 <!-- HERO -->
 <div class="hero-content">
-  <h1 id="heroTitle">Automate Your Operations. Scale With Precision.</h1>
-  <p id="heroSub">Custom AI systems designed to reduce admin load and unlock sustainable growth.</p>
+  <h1 data-key="heroTitle">
+    Automate Your Operations. Scale With Precision.
+</h1>
+  <p data-key="heroSub">
+  Custom AI systems designed to reduce admin load and unlock sustainable growth.
+</p>
   <a href="https://calendly.com/atlasautomations2026/30min"
      target="_blank"
      rel="noopener noreferrer"
@@ -255,20 +258,44 @@ const translations = {
     heroTitle: "Automate Your Operations. Scale With Precision.",
     heroSub: "Custom AI systems designed to reduce admin load and unlock sustainable growth."
   },
+
   th: {
-    heroTitle: "ทำให้ระบบธุรกิจของคุณเป็นอัตโนมัติ และขยายอย่างแม่นยำ",
-    heroSub: "ระบบ AI ที่ออกแบบมาเพื่อลดภาระงานแอดมินและเพิ่มการเติบโตอย่างยั่งยืน"
+    heroTitle: "ทำให้ธุรกิจของคุณเป็นอัตโนมัติ และขยายอย่างแม่นยำ",
+    heroSub: "ระบบ AI ที่ออกแบบมาเพื่อลดภาระงานแอดมิน และเพิ่มการเติบโตอย่างยั่งยืน"
   },
+
   zh: {
-    heroTitle: "自动化您的业务运营，精准扩展规模",
-    heroSub: "定制AI系统，减少行政负担，实现可持续增长"
+    heroTitle: "自动化您的业务，精准扩展。",
+    heroSub: "定制 AI 系统，减少行政负担并实现可持续增长。"
+  },
+
+  mm: {
+    heroTitle: "သင့်လုပ်ငန်းကို အလိုအလျောက်လုပ်ဆောင်ပြီး တိကျစွာ တိုးချဲ့ပါ။",
+    heroSub: "အုပ်ချုပ်ရေးအလုပ်များကို လျှော့ချပြီး တည်တံ့သော တိုးတက်မှုရရှိရန် စိတ်ကြိုက် AI စနစ်များ။"
   }
 };
 
-document.getElementById("languageSelect").addEventListener("change", function() {
+const switcher = document.getElementById("languageSwitcher");
+
+switcher.addEventListener("change", function () {
   const lang = this.value;
-  document.getElementById("heroTitle").textContent = translations[lang].heroTitle;
-  document.getElementById("heroSub").textContent = translations[lang].heroSub;
+
+  document.querySelectorAll("[data-key]").forEach(element => {
+    const key = element.getAttribute("data-key");
+    if (translations[lang][key]) {
+      element.textContent = translations[lang][key];
+    }
+  });
+
+  localStorage.setItem("selectedLanguage", lang);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("selectedLanguage");
+  if (savedLang && translations[savedLang]) {
+    switcher.value = savedLang;
+    switcher.dispatchEvent(new Event("change"));
+  }
 });
 </script>
 
