@@ -739,3 +739,19 @@ letter-spacing: 0.5px;
   opacity: 1 !important;
   visibility: visible !important;
 }
+/* Hide Google Translate default UI */
+.goog-te-gadget {
+  font-size: 0px !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  display: none !important;
+}
+
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
