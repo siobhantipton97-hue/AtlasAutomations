@@ -574,3 +574,69 @@ body > p:last-of-type {
 letter-spacing: 0.5px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+/* CLIENT INFO SECTION */
+
+.client-info {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.client-info h2 {
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  opacity: 0.85;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.service-card ul {
+  margin-top: 15px;
+  padding-left: 18px;
+  text-align: left;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.service-card ul li {
+  margin-bottom: 6px;
+}
+
+.result-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  font-size: 1rem;
+}
