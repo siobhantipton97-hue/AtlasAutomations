@@ -716,3 +716,9 @@ letter-spacing: 0.5px;
   position: relative;
   z-index: 5;
 }
+#proof .card,
+#proof .testimonial {
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+}
