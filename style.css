@@ -722,3 +722,20 @@ letter-spacing: 0.5px;
   display: block !important;
   visibility: visible !important;
 }
+/* FORCE PROVEN RESULTS TO DISPLAY */
+
+.social-proof {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  display: block !important;
+  position: relative;
+  z-index: 5;
+}
+
+.social-proof .grid,
+.social-proof .card,
+.social-proof .testimonial {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
