@@ -17,9 +17,8 @@
   <meta property="og:title" content="AI Automation & Chatbot Systems | Atlas Automations">
   <meta property="og:description" content="Automate enquiries, improve response time, and scale operations using AI chatbot systems.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://siobhantipton97-hue.github.io/Atlas-Automations">
-  <meta property="og:image" content="https://siobhantipton97-hue.github.io/Atlas-Automations/logo.png">
-</head>
+  <meta property="og:url" content="https://siobhantipton97-hue.github.io/AtlasAutomations/">
+<meta property="og:image" content="https://siobhantipton97-hue.github.io/AtlasAutomations/logo.png">
 
 <body>
 <div class="grid-overlay"></div>
@@ -235,7 +234,6 @@
 <footer>
     <p>© 2026 Atlas Automation. Engineered for Scale.</p>
 </footer>
-
 <script>
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -248,7 +246,26 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".card").forEach(card => {
     observer.observe(card);
 });
+
+/* LANGUAGE SWITCHER */
+
+const translations = {
+  en: {},
+  th: {},
+  zh: {}
+};
+
+document.getElementById("languageSelect").addEventListener("change", function() {
+  const selectedLang = this.value;
+  document.querySelectorAll("[data-translate]").forEach(el => {
+    const key = el.getAttribute("data-translate");
+    if (translations[selectedLang] && translations[selectedLang][key]) {
+      el.textContent = translations[selectedLang][key];
+    }
+  });
+});
 </script>
+
 <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/02/20/20/20260220200905-JJ283R9G.js" defer></script>
 </body>
