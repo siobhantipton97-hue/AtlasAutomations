@@ -775,3 +775,11 @@ letter-spacing: 0.5px;
 .language-switcher button:hover {
   background: #ffffff20;
 }
+/* Hide Google top banner */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
