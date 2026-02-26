@@ -675,3 +675,34 @@ letter-spacing: 0.5px;
 .booking h2 {
   color: #ffffff;
 }
+/* FIX LOW CONTRAST SECTIONS */
+
+.process,
+.why-automation,
+.client-info,
+.testimonials,
+.booking,
+.dark {
+  position: relative;
+  z-index: 2;
+}
+
+.process h2,
+.why-automation h2,
+.client-info h2,
+.testimonials h2,
+.booking h2 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.process p,
+.why-automation p,
+.client-info p,
+.testimonials p,
+.booking p,
+.process li,
+.why-automation li {
+  color: rgba(255,255,255,0.9) !important;
+  opacity: 1 !important;
+}
