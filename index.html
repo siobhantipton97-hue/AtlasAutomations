@@ -31,17 +31,13 @@
   </div>
 
   <nav>
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <a href="#services">Services</a>
+  <a href="#process">Process</a>
+  <a href="#contact">Contact</a>
 
-  <select id="languageSwitcher">
-  <option value="en">English</option>
-  <option value="th">ไทย</option>
-  <option value="zh">中文</option>
-  <option value="mm">မြန်မာ</option>
-</select>
+  <div id="google_translate_element"></div>
+</nav>
+
 </header>
 
 <!-- HERO -->
@@ -252,55 +248,25 @@
   <p>© 2026 Atlas Automation. Engineered for Scale.</p>
 </footer>
 
-<script>
-const translations = {
-  en: {
-    heroTitle: "Automate Your Operations. Scale With Precision.",
-    heroSub: "Custom AI systems designed to reduce admin load and unlock sustainable growth."
-  },
-
-  th: {
-    heroTitle: "ทำให้ธุรกิจของคุณเป็นอัตโนมัติ และขยายอย่างแม่นยำ",
-    heroSub: "ระบบ AI ที่ออกแบบมาเพื่อลดภาระงานแอดมิน และเพิ่มการเติบโตอย่างยั่งยืน"
-  },
-
-  zh: {
-    heroTitle: "自动化您的业务，精准扩展。",
-    heroSub: "定制 AI 系统，减少行政负担并实现可持续增长。"
-  },
-
-  mm: {
-    heroTitle: "သင့်လုပ်ငန်းကို အလိုအလျောက်လုပ်ဆောင်ပြီး တိကျစွာ တိုးချဲ့ပါ။",
-    heroSub: "အုပ်ချုပ်ရေးအလုပ်များကို လျှော့ချပြီး တည်တံ့သော တိုးတက်မှုရရှိရန် စိတ်ကြိုက် AI စနစ်များ။"
-  }
-};
-
-const switcher = document.getElementById("languageSwitcher");
-
-switcher.addEventListener("change", function () {
-  const lang = this.value;
-
-  document.querySelectorAll("[data-key]").forEach(element => {
-    const key = element.getAttribute("data-key");
-    if (translations[lang][key]) {
-      element.textContent = translations[lang][key];
-    }
-  });
-
-  localStorage.setItem("selectedLanguage", lang);
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("selectedLanguage");
-  if (savedLang && translations[savedLang]) {
-    switcher.value = savedLang;
-    switcher.dispatchEvent(new Event("change"));
-  }
-});
-</script>
-
 <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/02/20/20/20260220200905-JJ283R9G.js" defer></script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      includedLanguages: 'en,th,zh-CN,my',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 
 </body>
 </html>
