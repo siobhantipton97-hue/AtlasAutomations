@@ -254,21 +254,12 @@
   <p>© 2026 Atlas Automation. Engineered for Scale.</p>
 </footer>
 
+<!-- Botpress -->
 <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2026/02/20/20/20260220200905-JJ283R9G.js" defer></script>
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en',
-      includedLanguages: 'en,th,zh-CN,my',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    },
-    'google_translate_element'
-  );
-}
-  <script>
+<!-- Google Translate Init -->
+<script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     {
@@ -280,8 +271,21 @@ function googleTranslateElementInit() {
 }
 </script>
 
-<script type="text/javascript"
- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Google Loader -->
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Language Switcher -->
+<script>
+function changeLanguage(lang) {
+  const interval = setInterval(function() {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+      clearInterval(interval);
+    }
+  }, 300);
+}
 </script>
 
 </body>
