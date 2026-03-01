@@ -807,3 +807,10 @@ body {
 .social-links i {
   font-size: 22px;
 }
+.social-links {
+  position: relative;
+  z-index: 1000;
+}
+.social-links a {
+  pointer-events: auto;
+}
