@@ -804,3 +804,6 @@ body {
 .social-links a:hover {
   color: #00bfff;
 }
+.social-links i {
+  font-size: 22px;
+}
