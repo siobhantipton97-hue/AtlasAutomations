@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -833,4 +840,55 @@ footer {
 
 .social-links a:hover {
   color: #00bfff;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* ===== MOBILE OVERFLOW FIX ===== */
+@media (max-width: 768px) {
+
+  header {
+    padding: 20px 20px;
+  }
+
+  header img {
+    height: 80px;
+  }
+
+  .hero {
+    padding: 20vh 15px 0;
+  }
+
+  .hero-content {
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;   /* was 4rem */
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .section {
+    padding: 60px 15px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .process-steps {
+    gap: 40px;
+  }
+
+  .testimonial-grid {
+    gap: 20px;
+  }
+
 }
